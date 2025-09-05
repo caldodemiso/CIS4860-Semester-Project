@@ -1,0 +1,11 @@
+﻿# OS junk
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+*.code-workspace
+
+# Node/Build (if you add tools later)
+node_modules/
+dist/
