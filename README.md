@@ -13,3 +13,6 @@ This repository contains my project charter and related deliverables for CIS 486
 4. \git commit -m "Describe your change"\
 5. \git push\
 
+
+## Git Help
+See [GIT-COMMANDS.md](./GIT-COMMANDS.md) for a quick reference on common commands.
