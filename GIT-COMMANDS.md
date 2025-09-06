@@ -17,3 +17,7 @@
 - "Add stakeholder table"
 - "Fill in scope section"
 
+## One-Liner
+- cd ~/Documents/CIS4860-Semester-Project && git pull && code .
+
+
