@@ -326,13 +326,13 @@
               🎯 2. Vision, Mission & Strategy Alignment
             </h2>
           </div>
-          <div class="section-content">
+          <!-- <div class="section-content">
             <div class="instructions">
               <strong>Instructions:</strong>
               Explain how this project aligns with your personal mission,
               vision, and strategic goals. Reference your previous
               mission/vision/strategy work.
-            </div>
+            </div> -->
 
             <div class="placeholder">
               <h4>Personal Mission Connection:</h4>
@@ -396,7 +396,7 @@
             <h2 class="section-title">📏 4. High-Level Scope</h2>
           </div>
           <div class="section-content">
-            <div class="completed-work">
+            <!-- <div class="completed-work">
               <div class="completed-header">
                 ✅ Use Your Previous Scope Assignment
               </div>
@@ -404,50 +404,52 @@
                 Copy and paste your scope document content from your previous
                 assignment into the placeholders below.
               </p>
-            </div>
+            </div> -->
 
             <div class="scope-grid">
               <div class="scope-card in-scope">
                 <h4>✅ In Scope for Semester Project</h4>
                 <div class="placeholder">
                   <p>
-                    [Paste your "In Scope" items from your scope assignment
-                    here]
+                    <ul>
+                        <li>Set up a small internal network with VMs or devices</li>
+                        <li>Configure secure remote access (VPN or SSH)</li>
+                        <li>Integrate at least one smart home device (lights or thermostat)</li>
+                        <li>Segment IoT devices onto a separate network for security</li>
+                        <li>Run basic vulnerability scans with Nmap or similar tools</li>
+                        <li>Document setup steps and key configurations</li>
+                        <li>Deliver a final summary report of results and lessons learned</li>
+                    </ul>
                   </p>
-                  <ul>
-                    <li>[Feature/deliverable 1]</li>
-                    <li>[Feature/deliverable 2]</li>
-                    <li>[Continue with your list...]</li>
-                  </ul>
                 </div>
               </div>
 
               <div class="scope-card roadmap">
                 <h4>🗺️ Roadmap Items (≤6 Months)</h4>
                 <div class="placeholder">
-                  <p>
-                    [Paste your "Roadmap Items" from your scope assignment here]
-                  </p>
                   <ul>
-                    <li>[Future enhancement 1]</li>
-                    <li>[Future enhancement 2]</li>
-                    <li>[Continue with your list...]</li>
-                  </ul>
+                    <li>Add more smart home devices and expand automation</li>
+                    <li>Implement a SIEM tool for monitoring and logging</li>
+                    <li>Test intrusion detection/prevention tools</li>
+                    <li>Experiment with cloud-hosted extensions (AWS, Azure)</li>
+                    <li>Create a portfolio write-up showcasing lab configurations</li>
+                    <li>Simulate attack/defense scenarios for deeper cybersecurity practice</li>
+                </ul>
+
                 </div>
               </div>
 
               <div class="scope-card out-scope">
                 <h4>❌ Out of Scope</h4>
                 <div class="placeholder">
-                  <p>
-                    [Paste your "Out of Scope" items from your scope assignment
-                    here]
-                  </p>
                   <ul>
-                    <li>[Out of scope item 1]</li>
-                    <li>[Out of scope item 2]</li>
-                    <li>[Continue with your list...]</li>
-                  </ul>
+                    <li>Full enterprise-level smart home or corporate network setup</li>
+                    <li>24/7 uptime or production-grade availability</li>
+                    <li>Advanced penetration testing on external networks</li>
+                    <li>Integration with unsupported or legacy devices</li>
+                    <li>Professional red-team/blue-team exercises requiring multiple participants</li>
+                </ul>
+
                 </div>
               </div>
             </div>
@@ -482,24 +484,16 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="placeholder">[Stakeholder Name 1]</td>
-                  <td class="placeholder">[Internal/External]</td>
-                  <td class="placeholder">[Their role and interest]</td>
-                  <td class="placeholder">[High/Medium/Low]</td>
-                  <td class="placeholder">[High/Medium/Low]</td>
-                  <td class="placeholder">[Management strategy]</td>
-                </tr>
-                <tr>
-                  <td colspan="6" class="instructions">
-                    <strong
-                      >Add more rows as needed for all your stakeholders (8-12
-                      total)</strong
-                    >
-                    You can copy this table row structure and paste it multiple
-                    times, then fill in each stakeholder's information.
-                  </td>
-                </tr>
+                <tr><td>Me (Project Owner)</td><td>Internal</td><td>Track progress daily, manage decisions, document thoroughly</td><td>High</td><td>High</td><td>Manage Closely</td></tr>
+                <tr><td>Instructor (Professor)</td><td>Internal</td><td>Provide updates, clarify expectations, escalate issues early</td><td>High</td><td>Medium</td><td>Manage Closely</td></tr>
+                <tr><td>Classmates/Peers</td><td>Internal</td><td>Share progress, feedback, collaboration</td><td>Low</td><td>High</td><td>Keep Informed</td></tr>
+                <tr><td>Family Members at Home</td><td>External</td><td>Affected by smart devices/network disruptions</td><td>Medium</td><td>Low</td><td>Keep Informed</td></tr>
+                <tr><td>University IT Department</td><td>Internal</td><td>Provide resources if needed</td><td>Medium</td><td>Medium</td><td>Keep Satisfied</td></tr>
+                <tr><td>Online Tech Communities</td><td>External</td><td>Provide Q&A and best practices</td><td>Low</td><td>Medium</td><td>Monitor</td></tr>
+                <tr><td>Device/Software Vendors</td><td>External</td><td>Documentation, troubleshooting, updates</td><td>Medium</td><td>Low</td><td>Monitor</td></tr>
+                <tr><td>Cybersecurity Standards (NIST, CIS)</td><td>Regulatory</td><td>Influence best practices, compliance guidance</td><td>High</td><td>Low</td><td>Keep Satisfied</td></tr>
+                <tr><td>Future Employers/Recruiters</td><td>External</td><td>Portfolio, reputation impact</td><td>High</td><td>Medium</td><td>Keep Informed</td></tr>
+                <tr><td>Cloud Service Providers (AWS, Azure, GCP)</td><td>External</td><td>Provide cloud-based lab extensions</td><td>Medium</td><td>Medium</td><td>Keep Satisfied</td></tr>
               </tbody>
             </table>
 
