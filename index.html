@@ -246,6 +246,247 @@
           grid-template-columns: 1fr;
         }
       }
+
+      <style>
+  :root {
+    --bg: #0f1221;
+    --card: #161a2e;
+    --text: #e8eaf6;
+    --muted: #b3b9d8;
+    --accent: #8ab4ff;
+    --border: #2a3156;
+    --ok: #6ee7b7;
+    --chip: #22274a;
+  }
+
+  .deliverables-section {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  }
+
+  .deliverables-section h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 16px;
+  }
+  .controls label { color: var(--muted); }
+  .controls select {
+    background: var(--chip);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+  }
+
+  caption {
+    text-align: left;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 12px;
+  }
+
+  thead th {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+  }
+
+  tbody td {
+    vertical-align: top;
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .name {
+    font-weight: 600;
+  }
+
+  .type-chip {
+    display: inline-block;
+    background: var(--chip);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  ul.dod {
+    margin: 8px 0 0 18px;
+    padding: 0;
+    list-style: disc;
+  }
+
+  /* Mobile card view */
+  @media (max-width: 720px) {
+    table { display: none; }
+    .cards { display: grid; gap: 12px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+    .card .smart, .card .dod-wrap { margin-top: 10px; }
+    .badge { margin-left: 6px; }
+  }
+
+  .legend {
+    margin-top: 14px;
+    color: var(--muted);
+  }
+  .legend summary { cursor: pointer; }
+</style>
+
+<script>
+  // --- Deliverables Data (edit here if you need to tweak dates/text) ---
+  const deliverables = [
+    {
+      name: "Internal Network Setup with VMs/Devices",
+      type: "Tangible",
+      smart: "Configure a small internal HomeLab network with at least 2 virtual machines (e.g., firewall + client) by Oct 1, 2025, supporting stable communication.",
+      dod: [
+        "Two VMs deployed and connected",
+        "Network tested with successful ping/SSH",
+        "Documentation of IP schema and topology completed"
+      ]
+    },
+    {
+      name: "Secure Remote Access",
+      type: "Intangible",
+      smart: "Implement a secure method (VPN or SSH) for remote access to the HomeLab by Oct 8, 2025, ensuring encrypted connectivity.",
+      dod: [
+        "Remote connection tested from external device",
+        "Credentials secured (key-based or VPN creds)",
+        "Security scan confirms encrypted tunnel",
+        "Steps documented"
+      ]
+    },
+    {
+      name: "Smart Device Integration",
+      type: "Tangible",
+      smart: "Connect and configure at least one IoT smart home device (light or thermostat) on a segmented network by Oct 15, 2025.",
+      dod: [
+        "Device successfully added to IoT VLAN/subnet",
+        "Device controllable remotely",
+        "Segmentation verified (cannot reach internal VM)",
+        "Screenshots and setup guide provided"
+      ]
+    },
+    {
+      name: "Vulnerability Scan with Nmap",
+      type: "Intangible",
+      smart: "Run and document at least one vulnerability scan of the HomeLab devices using Nmap by Oct 22, 2025.",
+      dod: [
+        "Scan executed and saved",
+        "At least 3 vulnerabilities/ports identified",
+        "Basic mitigation or analysis noted",
+        "Report included in final documentation"
+      ]
+    },
+    {
+      name: "Final Summary Report",
+      type: "Outcome",
+      smart: "Deliver a structured report (5–7 pages) summarizing configurations, results, and lessons learned, submitted by Nov 5, 2025.",
+      dod: [
+        "Report includes: intro, setup steps, screenshots, results, lessons",
+        "Peer/instructor feedback incorporated",
+        "PDF uploaded to Canvas on time"
+      ]
+    }
+  ];
+
+  const tbody = document.getElementById("deliverables-body");
+  const select = document.getElementById("typeFilter");
+
+  function renderTable(filter = "all") {
+    tbody.innerHTML = "";
+    const rows = deliverables
+      .filter(d => filter === "all" ? true : d.type === filter)
+      .map(d => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td class="name">${d.name}</td>
+          <td><span class="type-chip" aria-label="Deliverable type">${d.type}</span></td>
+          <td>${d.smart}</td>
+          <td>${renderDod(d.dod)}</td>
+        `;
+        return tr;
+      });
+    rows.forEach(r => tbody.appendChild(r));
+
+    // Render mobile cards
+    renderCards(filter);
+  }
+
+  function renderDod(items) {
+    return `<ul class="dod">${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
+  }
+
+  // Mobile card view container
+  let cardsWrap = null;
+  function ensureCardsWrap() {
+    if (!cardsWrap) {
+      cardsWrap = document.createElement("div");
+      cardsWrap.className = "cards";
+      cardsWrap.setAttribute("id", "deliverables-cards");
+      document.querySelector(".table-wrap").after(cardsWrap);
+    }
+  }
+
+  function renderCards(filter = "all") {
+    ensureCardsWrap();
+    cardsWrap.innerHTML = "";
+    const items = deliverables.filter(d => filter === "all" ? true : d.type === filter);
+    items.forEach(d => {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${d.name}</h3>
+        <div class="meta">
+          Type: <span class="type-chip badge">${d.type}</span>
+        </div>
+        <div class="smart"><strong>SMART:</strong> ${d.smart}</div>
+        <div class="dod-wrap"><strong>Definition of Done:</strong> ${renderDod(d.dod)}</div>
+      `;
+      cardsWrap.appendChild(card);
+    });
+  }
+
+  select.addEventListener("change", (e) => renderTable(e.target.value));
+  renderTable("all");
+</script>
     </style>
   </head>
   <body>
