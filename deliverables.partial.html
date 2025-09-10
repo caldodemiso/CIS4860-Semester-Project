@@ -1,0 +1,105 @@
+<!-- Deliverables partial: no styles, inherits your template -->
+<section id="deliverables" class="section">
+  <div class="container">
+    <h2 class="section__title">Deliverables & Definition of Done</h2>
+
+    <div class="controls" role="region" aria-label="Deliverables controls">
+      <label for="typeFilter">Filter by type:</label>
+      <select id="typeFilter" aria-controls="deliverables-table">
+        <option value="all">All</option>
+        <option value="Tangible">Tangible</option>
+        <option value="Intangible">Intangible</option>
+        <option value="Outcome">Outcome</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="deliverables-table" class="table">
+        <caption>
+          Deliverable Analysis Grid (SMART + DoD)
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Deliverable Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">SMART Description</th>
+            <th scope="col">Definition of Done</th>
+          </tr>
+        </thead>
+        <tbody id="deliverables-body">
+          <tr data-type="Tangible">
+            <td class="name">Internal Network Setup with VMs/Devices</td>
+            <td><span class="badge">Tangible</span></td>
+            <td>Configure a HomeLab network with 2+ VMs by Oct 1, 2025.</td>
+            <td>
+              <ul>
+                <li>Two VMs deployed & connected</li>
+                <li>Successful ping/SSH</li>
+                <li>IP schema documented</li>
+              </ul>
+            </td>
+          </tr>
+          <tr data-type="Intangible">
+            <td class="name">Secure Remote Access</td>
+            <td><span class="badge">Intangible</span></td>
+            <td>Implement VPN/SSH remote access by Oct 8, 2025.</td>
+            <td>
+              <ul>
+                <li>External device connection tested</li>
+                <li>Credentials secured</li>
+                <li>Security scan confirms encryption</li>
+              </ul>
+            </td>
+          </tr>
+          <tr data-type="Tangible">
+            <td class="name">Smart Device Integration</td>
+            <td><span class="badge">Tangible</span></td>
+            <td>Add 1 IoT device on a separate network by Oct 15, 2025.</td>
+            <td>
+              <ul>
+                <li>Device added to IoT VLAN</li>
+                <li>Remote control works</li>
+                <li>Segmentation verified</li>
+              </ul>
+            </td>
+          </tr>
+          <tr data-type="Intangible">
+            <td class="name">Vulnerability Scan with Nmap</td>
+            <td><span class="badge">Intangible</span></td>
+            <td>Run/document Nmap scan by Oct 22, 2025.</td>
+            <td>
+              <ul>
+                <li>Scan executed & saved</li>
+                <li>3+ ports/issues identified</li>
+                <li>Mitigation/notes added</li>
+              </ul>
+            </td>
+          </tr>
+          <tr data-type="Outcome">
+            <td class="name">Final Summary Report</td>
+            <td><span class="badge">Outcome</span></td>
+            <td>Deliver report (5–7 pages) by Nov 5, 2025.</td>
+            <td>
+              <ul>
+                <li>Includes intro, screenshots, results</li>
+                <li>Feedback incorporated</li>
+                <li>PDF uploaded on time</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details>
+      <summary>What makes a good deliverable?</summary>
+      <ul>
+        <li>
+          <strong>Specific</strong>, <strong>Measurable</strong>,
+          <strong>Achievable</strong>, <strong>Relevant</strong>,
+          <strong>Time-bound</strong>
+        </li>
+      </ul>
+    </details>
+  </div>
+</section>
