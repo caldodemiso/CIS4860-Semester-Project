@@ -355,7 +355,7 @@
 
             </div>
           </div>
-        </div>
+      </div>
 
         <!-- Section 3: Business Case -->
         <div class="section">
@@ -511,6 +511,50 @@
             </div>
           </div>
         </div>
+
+        <!-- Deliverables & Definition of Done -->
+        <section id="deliverables" class="deliverables-section" aria-labelledby="deliverables-title">
+          <h2 id="deliverables-title">📦 Deliverables & Definition of Done</h2>
+
+          <!-- Controls -->
+          <div class="controls" role="region" aria-label="Deliverables controls">
+            <label for="typeFilter">Filter by Type:</label>
+            <select id="typeFilter" aria-controls="deliverables-table">
+              <option value="all">All</option>
+              <option value="Tangible">Tangible</option>
+              <option value="Intangible">Intangible</option>
+              <option value="Outcome">Outcome</option>
+            </select>
+          </div>
+
+          <!-- Table -->
+          <div class="table-wrap">
+            <table id="deliverables-table">
+              <caption>Deliverable Analysis Grid (SMART + Definition of Done)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Deliverable Name</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">SMART Description</th>
+                  <th scope="col">Definition of Done</th>
+                </tr>
+              </thead>
+              <tbody id="deliverables-body"><!-- filled by JS --></tbody>
+            </table>
+          </div>
+
+          <!-- Legend -->
+          <details class="legend">
+            <summary>What makes a good deliverable?</summary>
+            <ul>
+              <li><strong>Specific</strong> – clear scope and outcome</li>
+              <li><strong>Measurable</strong> – testable success criteria</li>
+              <li><strong>Achievable</strong> – realistic within constraints</li>
+              <li><strong>Relevant</strong> – tied to project goals</li>
+              <li><strong>Time-bound</strong> – has a due date</li>
+            </ul>
+          </details>
+        </section>
 
         <!-- Footer Note -->
         <div class="section">
