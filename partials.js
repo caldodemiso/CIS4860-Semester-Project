@@ -1,4 +1,3 @@
-<!-- put this as a real file: partials.js -->
 <script>
 (async function () {
   // 1) include the partial
